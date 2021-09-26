@@ -1,0 +1,43 @@
+<div class="mx-3">
+    <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0 text-center" >Role Management</h3>
+        </div>
+        <div class="table-responsive" style="min-height: 600px;">
+          <table class="table align-items-center table-flush" >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">User id</th>
+                <th scope="col">Emaployee Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Tes Emaployee</td>
+                    <td><span *ngIf="!edit">Branch Manager</span>
+                        <select *ngIf="edit" class="form-control">
+                            <option>Emaployee</option>
+                            <option>CEO</option>
+                            <option>Branch Manager</option>
+                          </select>
+                          
+                    </td>
+                    <td class="text-right">
+                        <div ngbDropdown placement="bottom-right">
+                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                            <a class="dropdown-item" *ngFor="let action of actions" (click)="actionSelected(action.value)">{{edit &&action.value=='edit'?'Save':action.name}}</a>
+                          </div>
+                        </div>
+                      </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+  </div>
+</div>

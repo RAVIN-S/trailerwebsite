@@ -1,0 +1,104 @@
+<div class="mx-3">
+    <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0 text-center" >Verified Users</h3>
+        </div>
+        <div class="table-responsive" style="min-height: 300px;">
+          <table class="table align-items-center table-flush" >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Date time</th>
+                <th scope="col"> user id</th>
+                  <th scope="col">name </th>
+                 <th scope="col">telephone </th>
+                <th scope="col"> email id </th>
+                <th scope="col"> address</th>
+                <th scope="col"> GPS location</th>
+                <th scope="col"> photo</th>
+                <th scope="col"> verification status</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2021-09-26 10:00 AM</td>
+                    <td>832</td>
+                    <td>test user</td>
+                    <td>7632812332</td>
+                    <td>
+                     test@gmail.com    
+                    </td>
+                    <td>test address</td>
+                    <td>New York</td>
+                    <td>Image Not Found</td>
+                    <td>Verified</td>
+                    <td class="text-right">
+                        <div ngbDropdown placement="bottom-right">
+                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                            <a class="dropdown-item" *ngFor="let action of actions" (click)="actionSelected(action.value)">{{edit &&action.value=='edit'?'Save':action.name}}</a>
+                          </div>
+                        </div>
+                      </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="mx-3">
+    <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0 text-center" >Unverified Users</h3>
+        </div>
+        <div class="table-responsive" style="min-height: 300px;">
+          <table class="table align-items-center table-flush" >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Date time</th>
+                <th scope="col"> user id</th>
+                  <th scope="col">name </th>
+                 <th scope="col">telephone </th>
+                <th scope="col"> email id </th>
+                <th scope="col"> address</th>
+                <th scope="col"> GPS location</th>
+                <th scope="col"> photo</th>
+                <th scope="col"> verification status</th>
+                <th scope="col"> Document status</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2021-09-26 10:00 AM</td>
+                    <td>832</td>
+                    <td>test user</td>
+                    <td>7632812332</td>
+                    <td>
+                     test@gmail.com    
+                    </td>
+                    <td>test address</td>
+                    <td>New York</td>
+                    <td>Image Not Found</td>
+                    <td>Verification Pending</td>
+                    <td>false</td>
+                    <td class="text-right">
+                        <div ngbDropdown placement="bottom-right">
+                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                            <a class="dropdown-item" *ngFor="let action of actions" (click)="actionSelected(action.value)">{{edit &&action.value=='edit'?'Save':action.name}}</a>
+                          </div>
+                        </div>
+                      </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+  </div>
+</div>

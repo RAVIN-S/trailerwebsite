@@ -1,0 +1,76 @@
+<div class="mx-3">
+    <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0 text-center" >Emaployee Management</h3>
+        </div>
+        <div class="table-responsive" style="min-height: 600px;">
+          <table class="table align-items-center table-flush" >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Employee id</th>
+               <th scope="col"> Telephone number</th>
+                <th scope="col">Email id</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Personal details </th>
+                <th scope="col">Professional details</th>
+                <th scope="col">Address</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>657567575</td>
+                    <td>
+                          test@gmail.com    
+                    </td>
+                    <td>Branch Manager</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>sample address</td>
+                    <td class="text-right">
+                        <div ngbDropdown placement="bottom-right">
+                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                            <a class="dropdown-item" *ngFor="let action of actions" (click)="actionSelected(action.value)">{{edit &&action.value=='edit'?'Save':action.name}}</a>
+                          </div>
+                        </div>
+                      </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+  </div>
+</div>
+<ng-template #editEmployee let-c="close" let-d="dismiss">
+    <!-- modal header -->
+    <div class="modal-header bg-secondary">
+        <h2 class="modal-title text-center">Edit Employee</h2>
+    </div>
+    <!-- modal header -->
+    <div class="modal-body">
+        <!-- modal content -->
+        <h3>Edit Employee details here</h3>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-primary"
+            (click)="testSMS()">Save Detals</button>
+        <button type="button" class="btn btn-outline-primary" (click)="this.modalService.dismissAll()">Cancel</button>
+    </div>
+</ng-template>
+<ng-template #viewEmployee let-c="close" let-d="dismiss">
+    <!-- modal header -->
+    <div class="modal-header bg-secondary">
+        <h2 class="modal-title text-center">View Employee</h2>
+    </div>
+    <!-- modal header -->
+    <div class="modal-body">
+        <!-- modal content -->
+        <h3>Employee details here</h3>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-primary" (click)="this.modalService.dismissAll()">Close</button>
+    </div>
+</ng-template>
