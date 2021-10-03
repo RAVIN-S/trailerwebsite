@@ -8,6 +8,11 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -17,9 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "allowedCommonJsDependencies": [
-              "chart.js"
-            ],
+            "allowedCommonJsDependencies": ["chart.js"],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -58,8 +61,8 @@
               ]
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": {
+             "buildOptimizer": false,
+             "optimization": {
                 "scripts": true,
                 "styles": {
                   "minify": false,
@@ -67,8 +70,8 @@
                 },
                 "fonts": true
               },
-              "outputHashing": "all"
-            }
+             "outputHashing": "all",
+           }
           }
         },
         "serve": {
@@ -84,7 +87,7 @@
               "browserTarget": "argon-dashboard-angular:build:development"
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -120,10 +123,6 @@
               "**/node_modules/**"
             ]
           }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {}
         }
       }
     },
@@ -156,6 +155,11 @@
     }
   },
   "defaultProject": "argon-dashboard-angular",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  },
   "cli": {
     "analytics": false
   }

@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,14 +6,11 @@ import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor() {}
 
   ngOnInit() {
-    this.document.body.classList.add('bg-light');
   }
   ngOnDestroy() {
-    this.document.body.classList.remove('bg-light');
   }
-
 
 }
